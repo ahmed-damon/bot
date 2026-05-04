@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نباتات كوكب الأمير الصغير</title>
+    <style>
+        body, html { margin: 0; padding: 0; overflow: hidden; font-family: 'Arial', sans-serif; background: #050510; color: white; }
+        .container { display: flex; width: 500vw; height: 100vh; transition: transform 0.7s ease-in-out; }
+        .slide { width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; box-sizing: border-box; background-size: cover; background-position: center; position: relative; }
+        .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6); }
+        .content { position: relative; z-index: 2; max-width: 800px; }
+        .reader-badge { position: absolute; top: 30px; right: 30px; background: #4834d4; padding: 10px 25px; border-radius: 50px; font-weight: bold; z-index: 3; }
+        h1 { color: #fbc531; font-size: 2.5rem; }
+        p { font-size: 1.5rem; line-height: 1.6; }
+        .nav { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 20px; }
+        button, .back-home { background: #fbc531; border: none; padding: 12px 30px; border-radius: 50px; cursor: pointer; font-weight: bold; text-decoration: none; color: #0a0a23; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="slider">
+    <!-- الشريحة 1: أحمد محمد -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1000');">
+        <div class="overlay"></div>
+        <div class="reader-badge">أحمد محمد</div>
+        <div class="content">
+            <h1>بذور الكوكب</h1>
+            <p>"بذور صالحة وأخرى ضارة تنام في أعماق الأرض حتى يحين وقت استيقاظها."</p>
+        </div>
+    </div>
+
+    <!-- الشريحة 2: عيد عاشور -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1000');">
+        <div class="overlay"></div>
+        <div class="reader-badge">عيد عاشور</div>
+        <div class="content">
+            <h1>خطر الباوباب</h1>
+            <p>"شجيرات الباوباب إذا لم تقتلع فوراً ستمزق جذورها الكوكب الصغير."</p>
+        </div>
+    </div>
+
+    <!-- الشريحة 3: أُبي -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000');">
+        <div class="overlay"></div>
+        <div class="reader-badge">أُبي</div>
+        <div class="content">
+            <h1>الزهرة الفريدة</h1>
+            <p>"استيقظت الزهرة مع الشمس، مزينة بجمال أخاذ لا يشبه شيئاً آخر."</p>
+        </div>
+    </div>
+
+    <!-- الشريحة 4: محمود ابراهيم -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1000');">
+        <div class="overlay"></div>
+        <div class="reader-badge">محمود ابراهيم</div>
+        <div class="content">
+            <h1>رعاية النبات</h1>
+            <p>"سقاها الأمير يومياً وحماها بغطاء زجاجي من الرياح الباردة."</p>
+        </div>
+    </div>
+
+    <!-- الشريحة 5: عمر نبيل -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000');">
+        <div class="overlay"></div>
+        <div class="reader-badge">عمر نبيل</div>
+        <div class="content">
+            <h1>الوفاء للزهرة</h1>
+            <p>"أدرك الأمير أن وقته الذي بذله لأجل زهرته هو ما جعلها مهمة جداً."</p>
+        </div>
+    </div>
+</div>
+
+<div class="nav">
+    <a href="index.html" class="back-home">🏠 رجوع</a>
+    <button onclick="move(-1)">السابق</button>
+    <button onclick="move(1)">التالي</button>
+</div>
+
+<script>
+    let currentSlide = 0;
+    function move(direction) {
+        currentSlide = Math.max(0, Math.min(4, currentSlide + direction));
+        document.getElementById('slider').style.transform = `translateX(${currentSlide * 100}vw)`;
+    }
+</script>
+
+</body>
+</html>
