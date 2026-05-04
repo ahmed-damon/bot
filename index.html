@@ -3,27 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damon Panel - الواجهة الرئيسية</title>
+    <title>Damon | عرض الأمير الصغير</title>
     <style>
-        body { margin: 0; background: #0a0a23; color: white; font-family: 'Arial', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
-        .card { background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 25px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); width: 90%; max-width: 400px; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fbc531; margin-bottom: 20px; object-fit: cover; }
-        h1 { font-size: 1.8rem; margin-bottom: 30px; color: #fbc531; }
-        .btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border-radius: 12px; text-decoration: none; font-weight: bold; transition: 0.3s; cursor: pointer; border: none; font-size: 1.1rem; }
-        .btn-slides { background: #fbc531; color: #0a0a23; }
-        .btn-dev { background: #4834d4; color: white; }
-        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+        /* 
+           Developed by: Ahmed (Damon) 
+           Project: Little Prince Presentation
+           All rights reserved to the developer
+        */
+        body { font-family: 'Arial', sans-serif; background: #050510; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; }
+        
+        /* إطار الصورة العامة للقصة */
+        .profile-img { width: 180px; height: 180px; border-radius: 20px; border: 2px solid #fbc531; margin-bottom: 20px; object-fit: cover; box-shadow: 0 0 25px rgba(251, 197, 49, 0.2); }
+        
+        h1 { margin: 10px 0; color: #fbc531; font-size: 2rem; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+        p { color: #aaa; font-size: 1rem; margin-bottom: 30px; max-width: 80%; }
+        
+        .btn-container { display: flex; flex-direction: column; gap: 15px; }
+        .btn { background: #fbc531; color: #0a0a23; padding: 12px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; width: 220px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+        .btn:hover { background: #fff; transform: translateY(-3px); }
+        
+        /* بصمة المطور غير القابلة للشك */
+        .dev-footer { position: fixed; bottom: 15px; font-size: 0.7rem; color: #444; border-top: 1px solid #222; width: 100%; padding-top: 10px; }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <img src="https://i.postimg.cc/SsMPRn2x/IMG-1726.jpg" class="profile-img" alt="Damon">
-    <h1>مرحباً بك في مشروعنا</h1>
+    <!-- صورة تعبيرية لقصة الأمير الصغير -->
+    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1000" alt="The Little Prince" class="profile-img">
     
-    <a href="slides.html" class="btn btn-slides">📖 فتح عرض الأمير الصغير</a>
-    <a href="https://t.me/DVNsuii" class="btn btn-dev">👨‍💻 زر المطور (AHMED)</a>
-</div>
+    <h1>مشروع الأمير الصغير</h1>
+    <p>تحليل تفاعلي لنباتات الكوكب وأسرار الزهرة</p>
+
+    <div class="btn-container">
+        <!-- رابط العرض -->
+        <a href="/slides" class="btn">🚀 ابدأ العرض التقديمي</a>
+        
+        <!-- التواصل برقمك المباشر -->
+        <a href="tel:+971543496968" class="btn">📞 تواصل مع المبرمج</a>
+    </div>
+
+    <!-- إثبات أنك صاحب العمل -->
+    <div class="dev-footer">
+        DEVELOPED BY AHMED (DAMON) | REPOSITORY: BOT | VERSION 2.1
+    </div>
 
 </body>
 </html>
