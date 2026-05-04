@@ -3,84 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نباتات كوكب الأمير الصغير - نسخة محسنة</title>
+    <title>نباتات كوكب الأمير الصغير</title>
     <style>
         body, html { margin: 0; padding: 0; overflow: hidden; font-family: 'Arial', sans-serif; background: #050510; color: white; }
         .container { display: flex; width: 600vw; height: 100vh; transition: transform 0.7s ease-in-out; }
-        .slide { width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; box-sizing: border-box; background-size: cover; background-position: center; position: relative; }
-        .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.7); }
-        .content { position: relative; z-index: 2; max-width: 900px; padding-bottom: 60px; } /* مسافة أسفل النص لضمان عدم تداخله مع الأزرار */
+        .slide { width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; padding: 15px; box-sizing: border-box; background-size: cover; background-position: center; position: relative; }
+        .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.75); }
         
-        /* تصغير اسم الشخص في الزاوية */
-        .reader-badge { position: absolute; top: 15px; right: 15px; background: rgba(72, 52, 212, 0.8); padding: 5px 15px; border-radius: 30px; font-size: 0.9rem; font-weight: bold; z-index: 3; }
+        /* تقليل حجم اسم الشخص ورفعه للأعلى */
+        .reader-badge { position: relative; margin-top: 10px; background: #4834d4; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; z-index: 3; align-self: flex-end; }
         
-        h1 { color: #fbc531; font-size: 2rem; margin-bottom: 15px; }
-        p { font-size: 1.2rem; line-height: 1.6; text-align: justify; background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; }
+        .content { position: relative; z-index: 2; max-width: 95%; margin-top: 10px; }
+        h1 { color: #fbc531; font-size: 1.6rem; margin: 10px 0; }
         
-        .questions-list { text-align: right; background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 12px; list-style: none; }
-        .questions-list li { font-size: 1.1rem; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        /* تحسين النص ليكون مريح للعين ولا يتداخل مع الأزرار */
+        p { font-size: 1.05rem; line-height: 1.5; text-align: justify; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 10px; margin-bottom: 80px; }
+
+        /* شريط تحكم نحيف جداً في أسفل الشاشة */
+        .nav { position: fixed; bottom: 0; left: 0; right: 0; height: 60px; background: rgba(0,0,0,0.8); display: flex; justify-content: space-around; align-items: center; z-index: 10; border-top: 1px solid rgba(255,255,255,0.1); }
         
-        /* تصغير أزرار التحكم في الأسفل */
-        .nav { position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 10px; }
-        button, .back-home { background: #fbc531; border: none; padding: 8px 20px; border-radius: 40px; cursor: pointer; font-weight: bold; font-size: 0.85rem; text-decoration: none; color: #0a0a23; transition: 0.3s; }
+        button, .back-home { background: #fbc531; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 0.8rem; text-decoration: none; color: #0a0a23; min-width: 80px; }
+        
+        .questions-list { text-align: right; font-size: 0.95rem; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 10px; list-style: none; }
+        .questions-list li { margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px; }
     </style>
 </head>
 <body>
 
 <div class="container" id="slider">
-    <!-- المحتوى يظل كما هو مع النصوص الطويلة -->
     <!-- الشريحة 1: أحمد محمد -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1000');">
         <div class="overlay"></div>
         <div class="reader-badge">أحمد محمد</div>
         <div class="content">
             <h1>أسرار بذور الكوكب الخفية</h1>
-            <p>في كوكب الأمير الصغير، كما في كل الكواكب، توجد بذور صالحة وبذور ضارة. هذه البذور غير مرئية، فهي تنام في أعماق الأرض المظلمة حتى يقرر أحدها الاستيقاظ فجأة. تبدأ الحكاية ببرعم صغير يخرج ببطء نحو الشمس، فإذا كان برعماً لزهرة جميلة أو حبة فجل، يمكن تركه ينمو بحرية، أما إذا كانت بذرة لنبات ضار، فيجب اقتلاعها فور التعرف عليها قبل أن تتغلغل وتدمر كل شيء.</p>
+            <p>في كوكب الأمير الصغير، توجد بذور صالحة وبذور ضارة تنام في أعماق الأرض حتى يقرر أحدها الاستيقاظ. تبدأ الحكاية ببرعم صغير يخرج نحو الشمس، فإذا كان برعماً لزهرة جميلة يمكن تركه ينمو، أما إذا كانت بذرة لنبات ضار كالبوباب، فيجب اقتلاعها فوراً قبل أن تتغلغل وتدمر الكوكب.</p>
         </div>
     </div>
 
-    <!-- باقي الشرائح (عيد عاشور، أُبي، محمود، عمر) تتبع نفس النمط مع تصغير الـ badge -->
     <!-- الشريحة 2: عيد عاشور -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1000');">
         <div class="overlay"></div>
         <div class="reader-badge">عيد عاشور</div>
         <div class="content">
-            <h1>خطر أشجار الباوباب العملاقة</h1>
-            <p>تعتبر أشجار الباوباب كارثة حقيقية بالنسبة لكويكب صغير مثل كويكب الأمير. إذا تأخر المرء في اقتلاعها، فلن يتمكن أبداً من التخلص منها؛ حيث تملأ جذورها الكوكب بالكامل وتخترق أعماقه. وبسبب ضيق مساحة الكوكب، فإن نمو شجرتين أو ثلاث من الباوباب قد يؤدي في النهاية إلى تمزيق الكوكب وتفتيته إلى قطع صغيرة.</p>
+            <h1>خطر أشجار الباوباب</h1>
+            <p>تعتبر أشجار الباوباب كارثة حقيقية؛ إذا تأخر المرء في اقتلاعها، فستملأ جذورها الكوكب بالكامل وتخترق أعماقه. وبسبب ضيق مساحة الكوكب، فإن نمو شجرتين أو ثلاث من الباوباب قد يؤدي في النهاية إلى تمزيق الكوكب وتفتيته. لذا، فإن الانضباط اليومي هو السلاح الوحيد للنجاة.</p>
         </div>
     </div>
 
-    <!-- الشريحة 3: أُبي -->
+    <!-- باقي الشرائح تتبع نفس التنسيق لضمان عدم التداخل -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000');">
         <div class="overlay"></div>
         <div class="reader-badge">أُبي</div>
         <div class="content">
             <h1>ميلاد الزهرة المغرورة</h1>
-            <p>ذات صباح، ومع شروق الشمس تماماً، كشفت الزهرة عن جمالها بعد وقت طويل من التحضير والتأنق خلف بتلاتها. لم تكن مثل الزهور البسيطة التي تظهر وتختفي في يوم واحد، بل كانت كائناً مميزاً اختار بعناية لحظة ظهوره. ورغم جمالها الأخاذ الذي أذهل الأمير، إلا أنها كانت مغرورة بعض الشيء، تفتخر بأشواكها الأربعة وتظن أنها كافية لحمايتها.</p>
+            <p>كشفت الزهرة عن جمالها مع شروق الشمس بعد وقت طويل من التأنق. كانت كائناً مميزاً اختار بعناية لحظة ظهوره، ورغم جمالها الأخاذ، إلا أنها كانت مغرورة تفتخر بأشواكها الأربعة وتظن أنها كافية لحمايتها من نمور العالم.</p>
         </div>
     </div>
 
-    <!-- الشريحة 4: محمود ابراهيم -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1000');">
         <div class="overlay"></div>
         <div class="reader-badge">محمود ابراهيم</div>
         <div class="content">
             <h1>رعاية الحب والتفاصيل</h1>
-            <p>كرس الأمير الصغير وقته بالكامل لخدمة هذه الزهرة الحساسة. كان يسقيها بماء عذب ومنعش كل صباح، ويضع فوقها غطاءً زجاجياً عند حلول الليل ليحميها من تيارات الهواء الباردة التي كانت تخشاها كثيراً. ورغم متطلباتها الكثيرة وكبريائها، إلا أن الأمير كان يشعر بمسؤولية عظيمة تجاهها، لأن جمالها كان يملأ كوكبه عبيراً وضياءً.</p>
+            <p>كان الأمير يسقي زهرته بماء عذب كل صباح، ويضع فوقها غطاءً زجاجياً ليحميها من الهواء البارد. ورغم متطلباتها، كان يشعر بمسؤولية عظيمة تجاهها، لأن جمالها كان يملأ كوكبه عبيراً وضياءً.</p>
         </div>
     </div>
 
-    <!-- الشريحة 5: عمر نبيل -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000');">
         <div class="overlay"></div>
         <div class="reader-badge">عمر نبيل</div>
         <div class="content">
-            <h1>الدرس المستفاد: الوقت هو الحب</h1>
-            <p>عندما زار الأمير حديقة مليئة بآلاف الورود، شعر بالحزن لأن زهرته لم تكن الوحيدة. لكن الثعلب علمه سراً عظيماً: "أنت مسؤول للأبد عما قمت بترويضه". أدرك الأمير حينها أن زهرته أهم من كل الورود الأخرى لأنها هي التي سقاها، وهي التي حماها. إن الوقت الذي بذله لأجلها هو ما جعلها فريدة ولا تعوض في قلبه.</p>
+            <h1>الوقت هو الحب</h1>
+            <p>أدرك الأمير أن زهرته أهم من آلاف الورود الأخرى لأنها هي التي سقاها وحماها. كما تعلم من الثعلب: "أنت مسؤول للأبد عما قمت بترويضه"، فالوقت الذي بذله لأجلها هو ما جعلها فريدة في قلبه.</p>
         </div>
     </div>
 
-    <!-- الشريحة 6: فقرة الأسئلة -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1000');">
         <div class="overlay"></div>
         <div class="content">
@@ -88,17 +86,17 @@
             <ul class="questions-list">
                 <li>1. قارن بين بذور الأزهار وبذور الباوباب؟</li>
                 <li>2. ما الذي يرمز إليه "الانضباط اليومي"؟</li>
-                <li>3. الزهرة طلبت غطاءً زجاجياً؛ ماذا يعكس ذلك؟</li>
+                <li>3. لماذا طلبت الزهرة غطاءً زجاجياً؟</li>
                 <li>4. كيف تغيرت رؤية الأمير لزهرته لاحقاً؟</li>
-                <li>5. "العيون عمياء، ابحث بالقلب".. كيف نطبق هذا؟</li>
+                <li>5. "ابحث بالقلب".. كيف نطبق هذا؟</li>
             </ul>
         </div>
     </div>
 </div>
 
 <div class="nav">
-    <a href="index.html" class="back-home">🏠</a>
     <button onclick="move(-1)">السابق</button>
+    <a href="index.html" class="back-home">🏠 الرئيسية</a>
     <button onclick="move(1)">التالي</button>
 </div>
 
