@@ -3,93 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نباتات كوكب الأمير الصغير</title>
+    <title>نباتات كوكب الأمير الصغير - نسخة تفاعلية</title>
     <style>
         body, html { margin: 0; padding: 0; overflow: hidden; font-family: 'Arial', sans-serif; background: #050510; color: white; }
         .container { display: flex; width: 600vw; height: 100vh; transition: transform 0.7s ease-in-out; }
         .slide { width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; padding: 15px; box-sizing: border-box; background-size: cover; background-position: center; position: relative; }
         .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.75); }
-        
-        /* تقليل حجم اسم الشخص ورفعه للأعلى */
         .reader-badge { position: relative; margin-top: 10px; background: #4834d4; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; z-index: 3; align-self: flex-end; }
-        
         .content { position: relative; z-index: 2; max-width: 95%; margin-top: 10px; }
         h1 { color: #fbc531; font-size: 1.6rem; margin: 10px 0; }
+        p { font-size: 1.05rem; line-height: 1.5; text-align: justify; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 10px; margin-bottom: 20px; }
         
-        /* تحسين النص ليكون مريح للعين ولا يتداخل مع الأزرار */
-        p { font-size: 1.05rem; line-height: 1.5; text-align: justify; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 10px; margin-bottom: 80px; }
+        /* تنسيق قائمة الأسئلة والإجابات */
+        .questions-list { text-align: right; background: rgba(0,0,0,0.6); padding: 10px; border-radius: 10px; list-style: none; overflow-y: auto; max-height: 70vh; }
+        .question-item { margin-bottom: 15px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .question-text { font-size: 1rem; color: #fbc531; font-weight: bold; display: block; }
+        .answer-text { font-size: 0.9rem; color: #ecf0f1; display: none; margin-top: 5px; line-height: 1.4; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 5px; }
 
-        /* شريط تحكم نحيف جداً في أسفل الشاشة */
-        .nav { position: fixed; bottom: 0; left: 0; right: 0; height: 60px; background: rgba(0,0,0,0.8); display: flex; justify-content: space-around; align-items: center; z-index: 10; border-top: 1px solid rgba(255,255,255,0.1); }
-        
+        /* شريط التحكم السفلي */
+        .nav { position: fixed; bottom: 0; left: 0; right: 0; height: 60px; background: rgba(0,0,0,0.9); display: flex; justify-content: space-around; align-items: center; z-index: 10; }
         button, .back-home { background: #fbc531; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 0.8rem; text-decoration: none; color: #0a0a23; min-width: 80px; }
-        
-        .questions-list { text-align: right; font-size: 0.95rem; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 10px; list-style: none; }
-        .questions-list li { margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px; }
     </style>
 </head>
 <body>
 
 <div class="container" id="slider">
-    <!-- الشريحة 1: أحمد محمد -->
+    <!-- الشرائح السابقة تظل كما هي -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1000');">
-        <div class="overlay"></div>
-        <div class="reader-badge">أحمد محمد</div>
-        <div class="content">
-            <h1>أسرار بذور الكوكب الخفية</h1>
-            <p>في كوكب الأمير الصغير، توجد بذور صالحة وبذور ضارة تنام في أعماق الأرض حتى يقرر أحدها الاستيقاظ. تبدأ الحكاية ببرعم صغير يخرج نحو الشمس، فإذا كان برعماً لزهرة جميلة يمكن تركه ينمو، أما إذا كانت بذرة لنبات ضار كالبوباب، فيجب اقتلاعها فوراً قبل أن تتغلغل وتدمر الكوكب.</p>
-        </div>
+        <div class="overlay"></div><div class="reader-badge">أحمد محمد</div>
+        <div class="content"><h1>أسرار بذور الكوكب الخفية</h1><p>في كوكب الأمير الصغير، توجد بذور صالحة وبذور ضارة تنام في أعماق الأرض. يجب اقتلاع الضارة منها فوراً قبل أن تدمر الكوكب.</p></div>
     </div>
 
-    <!-- الشريحة 2: عيد عاشور -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1000');">
-        <div class="overlay"></div>
-        <div class="reader-badge">عيد عاشور</div>
-        <div class="content">
-            <h1>خطر أشجار الباوباب</h1>
-            <p>تعتبر أشجار الباوباب كارثة حقيقية؛ إذا تأخر المرء في اقتلاعها، فستملأ جذورها الكوكب بالكامل وتخترق أعماقه. وبسبب ضيق مساحة الكوكب، فإن نمو شجرتين أو ثلاث من الباوباب قد يؤدي في النهاية إلى تمزيق الكوكب وتفتيته. لذا، فإن الانضباط اليومي هو السلاح الوحيد للنجاة.</p>
-        </div>
+        <div class="overlay"></div><div class="reader-badge">عيد عاشور</div>
+        <div class="content"><h1>خطر أشجار الباوباب</h1><p>أشجار الباوباب كارثة؛ جذورها تخترق أعماق الكوكب وقد تؤدي لتمزيقه إذا نمت بكثرة. الانضباط اليومي هو الحل.</p></div>
     </div>
 
-    <!-- باقي الشرائح تتبع نفس التنسيق لضمان عدم التداخل -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000');">
-        <div class="overlay"></div>
-        <div class="reader-badge">أُبي</div>
-        <div class="content">
-            <h1>ميلاد الزهرة المغرورة</h1>
-            <p>كشفت الزهرة عن جمالها مع شروق الشمس بعد وقت طويل من التأنق. كانت كائناً مميزاً اختار بعناية لحظة ظهوره، ورغم جمالها الأخاذ، إلا أنها كانت مغرورة تفتخر بأشواكها الأربعة وتظن أنها كافية لحمايتها من نمور العالم.</p>
-        </div>
+        <div class="overlay"></div><div class="reader-badge">أُبي</div>
+        <div class="content"><h1>ميلاد الزهرة المغرورة</h1><p>كشفت الزهرة عن جمالها مع الشمس، ورغم رقتها كانت مغرورة تظن أن أشواكها الأربعة تحميها من كل شيء.</p></div>
     </div>
 
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1000');">
-        <div class="overlay"></div>
-        <div class="reader-badge">محمود ابراهيم</div>
-        <div class="content">
-            <h1>رعاية الحب والتفاصيل</h1>
-            <p>كان الأمير يسقي زهرته بماء عذب كل صباح، ويضع فوقها غطاءً زجاجياً ليحميها من الهواء البارد. ورغم متطلباتها، كان يشعر بمسؤولية عظيمة تجاهها، لأن جمالها كان يملأ كوكبه عبيراً وضياءً.</p>
-        </div>
+        <div class="overlay"></div><div class="reader-badge">محمود ابراهيم</div>
+        <div class="content"><h1>رعاية الحب والتفاصيل</h1><p>سقاها الأمير وحماها بغطاء زجاجي، وشعر بمسؤولية عظيمة تجاهها لأن جمالها ملأ حياته.</p></div>
     </div>
 
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000');">
-        <div class="overlay"></div>
-        <div class="reader-badge">عمر نبيل</div>
-        <div class="content">
-            <h1>الوقت هو الحب</h1>
-            <p>أدرك الأمير أن زهرته أهم من آلاف الورود الأخرى لأنها هي التي سقاها وحماها. كما تعلم من الثعلب: "أنت مسؤول للأبد عما قمت بترويضه"، فالوقت الذي بذله لأجلها هو ما جعلها فريدة في قلبه.</p>
-        </div>
+        <div class="overlay"></div><div class="reader-badge">عمر نبيل</div>
+        <div class="content"><h1>الوقت هو الحب</h1><p>تعلم الأمير أن زهرته فريدة لأنها هي التي رعاها وبذل لأجلها الوقت والجهد.</p></div>
     </div>
 
+    <!-- الشريحة 6: فقرة الأسئلة التفاعلية -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1000');">
         <div class="overlay"></div>
         <div class="content">
-            <h1>❓ فقرة الأسئلة</h1>
-            <ul class="questions-list">
-                <li>1. قارن بين بذور الأزهار وبذور الباوباب؟</li>
-                <li>2. ما الذي يرمز إليه "الانضباط اليومي"؟</li>
-                <li>3. لماذا طلبت الزهرة غطاءً زجاجياً؟</li>
-                <li>4. كيف تغيرت رؤية الأمير لزهرته لاحقاً؟</li>
-                <li>5. "ابحث بالقلب".. كيف نطبق هذا؟</li>
-            </ul>
+            <h1>❓ فقرة الأسئلة (اضغط للسؤال)</h1>
+            <div class="questions-list">
+                <div class="question-item" onclick="toggleAnswer(1)">
+                    <span class="question-text">1. قارن بين بذور الأزهار وبذور الباوباب؟</span>
+                    <div id="ans1" class="answer-text">بذور الأزهار تنمو لتصبح زينة جميلة للكوكب، بينما بذور الباوباب نباتات ضارة تخترق جذورها الأرض وقد تمزق الكوكب الصغير إذا لم تُقتلع فوراً.</div>
+                </div>
+                <div class="question-item" onclick="toggleAnswer(2)">
+                    <span class="question-text">2. ما الذي يرمز إليه "الانضباط اليومي"؟</span>
+                    <div id="ans2" class="answer-text">يرمز إلى أهمية مواجهة المشاكل الصغيرة (مثل براعم الباوباب) في بدايتها قبل أن تكبر وتصبح عصية على الحل.</div>
+                </div>
+                <div class="question-item" onclick="toggleAnswer(3)">
+                    <span class="question-text">3. لماذا طلبت الزهرة غطاءً زجاجياً؟</span>
+                    <div id="ans3" class="answer-text">بسبب كبريائها وحساسيتها المفرطة؛ فهي تخاف من تيارات الهواء الباردة وتدعي أنها لا تخشى النمور بفضل أشواكها.</div>
+                </div>
+                <div class="question-item" onclick="toggleAnswer(4)">
+                    <span class="question-text">4. كيف تغيرت رؤية الأمير لزهرته لاحقاً؟</span>
+                    <div id="ans4" class="answer-text">أدرك أنها فريدة في الكون ليس بشكلها، بل بالوقت والجهد الذي بذله في رعايتها وحمايتها، مما جعلها "زهرته" الخاصة.</div>
+                </div>
+                <div class="question-item" onclick="toggleAnswer(5)">
+                    <span class="question-text">5. "ابحث بالقلب".. كيف نطبق هذا؟</span>
+                    <div id="ans5" class="answer-text">يعني أن القيمة الحقيقية للأشياء لا تُرى بالعين (مثل شكل الزهرة)، بل بالمشاعر والمسؤولية التي نحملها تجاه من نحب.</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -106,6 +97,12 @@
     function move(direction) {
         currentSlide = Math.max(0, Math.min(totalSlides, currentSlide + direction));
         document.getElementById('slider').style.transform = `translateX(${currentSlide * 100}vw)`;
+    }
+
+    // وظيفة إظهار/إخفاء الإجابة
+    function toggleAnswer(num) {
+        const ans = document.getElementById('ans' + num);
+        ans.style.display = (ans.style.display === 'block') ? 'none' : 'block';
     }
 </script>
 
